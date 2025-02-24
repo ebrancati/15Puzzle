@@ -161,7 +161,7 @@ button:hover {
 @media (min-width: 1367px) {
 
     #game-container {
-        width: 640px;
+        width: 520px;
     }
 
     h1 {
@@ -169,13 +169,11 @@ button:hover {
     }
 
     button#restart-btn {
-        width: 200px;
-        font-size: 3rem;
+        font-size: 1.5rem;
     }
 
     #counter {
-        width: 350px;
-        font-size: 3rem;
+        font-size: 1.5rem;
     }
 
     #time,
@@ -184,19 +182,18 @@ button:hover {
     }
 
     button#toggle-animation-btn {
-        width: 500px;
-        font-size: 4vw;
+        font-size: 1.5rem;
     }
 
     #game-board {
-        grid-template-columns: repeat(4, 150px);
-        grid-template-rows: repeat(4, 150px);
+        grid-template-columns: repeat(4, 120px);
+        grid-template-rows: repeat(4, 120px);
 
     }
 
     .cell {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         font-size: 5rem;
     }
 }
