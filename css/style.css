@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #A67B5B;
+    background-color: #a58241;
     font-weight: bold;
     text-align: center;
 }
@@ -15,18 +15,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    margin-top: 0px;
-    margin-right: auto;
-    margin-bottom: 0px;
-    margin-left: auto;
-
+    margin: 0 auto;
+    font-family: "Domine", serif;
+    
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-
-    font-family: "Domine", serif;
 }
 
 h1 {
@@ -91,7 +86,7 @@ button#toggle-animation-btn {
 }
 
 .cell.red {
-    background-color: #9b1c31;
+    background-color: #d5314c;
 }
 
 .cell.white {
