@@ -10,7 +10,7 @@ class Puzzle15 {
         this.size = size;
 
         this.hasAnimated = false;
-        this.boardArray = this.generateShuffledBoard(this.size);
+        this.boardArray = this.shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
         this.isMoving = false;
         this.animationEnabled = true;
         this.startTime = null;
@@ -24,12 +24,6 @@ class Puzzle15 {
     initialize() {
         this.renderBoard();
         this.setupEventListeners();
-    }
-
-    generateShuffledBoard(size) {
-        const numbers = Array.from({ length: size * size - 1 }, (_, index) => index + 1);
-        numbers.push(" ");
-        return this.shuffle(numbers);
     }
 
     shuffle(array) {
@@ -46,8 +40,8 @@ class Puzzle15 {
         this.boardArray.forEach((cell, index) => {
             const cellElement = document.createElement("div");
             cellElement.classList.add("cell");
-            cellElement.textContent = cell === " " ? "" : cell;
-            cellElement.classList.toggle("empty", cell === " ");
+            cellElement.textContent = cell === 0 ? "" : cell;
+            cellElement.classList.toggle("empty", cell === 0);
             cellElement.setAttribute("data-index", index);
 
             if (index + 1 == cell) cellElement.classList.add("target");
@@ -86,7 +80,7 @@ class Puzzle15 {
         if (this.gameWon || this.isMoving) return;
 
         const index = parseInt(event.target.getAttribute("data-index"));
-        const emptyIndex = this.boardArray.indexOf(" ");
+        const emptyIndex = this.boardArray.indexOf(0);
         const emptyRow = Math.floor(emptyIndex / this.size);
         const emptyCol = emptyIndex % this.size;
         const clickedRow = Math.floor(index / this.size);
@@ -123,7 +117,7 @@ class Puzzle15 {
         }
 
         setTimeout(() => {
-            this.boardArray[fromIndex] = " ";
+            this.boardArray[fromIndex] = 0;
             this.boardArray[toIndex] = Number(fromCellElement.textContent.trim());
             this.renderBoard();
             this.isMoving = false;
@@ -138,15 +132,13 @@ class Puzzle15 {
     }
 
     checkVictory() {
-        return this.boardArray.every((cell, index) => {
-            return cell === " " ? index === this.boardArray.length - 1 : cell === index + 1;
-        });
+        return this.boardArray.every((cell, index) => cell === (index < 15 ? index + 1 : 0));
     }
 
     handleKeyPress(event) {
         if (this.gameWon || this.isMoving) return;
 
-        const emptyIndex = this.boardArray.indexOf(" ");
+        const emptyIndex = this.boardArray.indexOf(0);
         const emptyRow = Math.floor(emptyIndex / this.size);
         const emptyCol = emptyIndex % this.size;
 
@@ -208,7 +200,7 @@ class Puzzle15 {
             this.restartButton.addEventListener("click", () => {
                 this.gameWon = false;
                 this.hasAnimated = false;
-                this.boardArray = this.generateShuffledBoard(this.size);
+                this.boardArray = this.shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
                 this.renderBoard();
                 this.stopTimer();
 
