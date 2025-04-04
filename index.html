@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>15 Puzzle</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <script defer src="js/index.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="game-container">
+        <h1>15 Puzzle</h1>
+
+        <div id="game-info">
+            <button id="restart-btn">Restart</button>
+            <div id="counter">
+                <div id="time">
+                    <div id="time-title">Time</div>
+                    <div><span id="time-counter">0</span>s</div>
+                </div>
+                <div id="moves">
+                    <div id="moves-title">Moves</div>
+                    <div id="move-counter">0</div>
+                </div>
+            </div>
+        </div>
+        <div id="game-board-container">
+            <div id="game-board"></div>
+        </div>
+
+        <button id="toggle-animation-btn">Disable Animation</button>
+    </div>
+</body>
+
+</html>
