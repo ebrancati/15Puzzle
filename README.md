@@ -1,4 +1,4 @@
-## 🧩 15 Puzzle – Interactive Demo  
+## 🧩 15 Puzzle Demo  
 
 This repository contains a demo of the **15 Puzzle**  
  
